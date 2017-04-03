@@ -7,7 +7,7 @@ public class Geometry {
 		Scanner in=new Scanner(System.in);
 		menu();
 		int choice = in.nextInt();
-		while (choice<10){
+		while (choice<15){
 			//Ask the user which shape they want
 			//Read in the values
 			if (choice==1) {
@@ -87,6 +87,7 @@ public class Geometry {
 				System.out.println();
 				menu();
 				choice=in.nextInt();
+				
 			}if(choice==7){
 				//cube volume
 				double l;
@@ -98,7 +99,60 @@ public class Geometry {
 				menu();
 				choice=in.nextInt();
 				
-			}if (choice==8) {
+			}if (choice==8){
+				double l;
+				System.out.println("Give me a length");
+				l=in.nextDouble();
+				double surfaceAreaC=GeoCalc.cubeSur(l);
+				System.out.println("**************The surface area of the cube with length " + l + " is " + surfaceAreaC + ".**************");
+				menu();
+				choice=in.nextInt();
+				
+			}if (choice==9){
+				double l,w,h;
+				System.out.println("Give me a length");
+				l=in.nextDouble();
+				System.out.println("Give me a width");
+				w=in.nextDouble();
+				System.out.println("Give me a height");
+				h=in.nextDouble();
+				double volumeR=GeoCalc.recVol(l,w,h);
+				System.out.println("**************The volume of the cube " + l + ", "+w+" and "+h+"  is " + volumeR + ".**************");
+				menu();
+				choice=in.nextInt();
+				
+			}if (choice==10){
+				double l,w,h;
+				System.out.println("Give me a length");
+				l=in.nextDouble();
+				System.out.println("Give me a width");
+				w=in.nextDouble();
+				System.out.println("Give me a height");
+				h=in.nextDouble();
+				double surfaceAreaR=GeoCalc.recSur(l,w,h);
+				System.out.println("**************The surface area of the cube " + l + ", "+w+" and "+h+"  is " + surfaceAreaR + ".**************");
+				menu();
+				choice=in.nextInt();
+				
+			}if (choice==11){
+				double r;
+				System.out.println("Give me a radius");
+				r=in.nextDouble();
+				double volumeS=GeoCalc.sphVol(r);
+				System.out.println("**************The volume of the sphere " + r + " is " + volumeS + ".**************");
+				menu();
+				choice=in.nextInt();
+				
+			}if (choice==12){
+				double r;
+				System.out.println("Give me a radius");
+				r=in.nextDouble();
+				double surfaceAreaS=GeoCalc.sphSur(r);
+				System.out.println("**************The surface area of the sphere " + r + "  is " + surfaceAreaS + ".**************");
+				menu();
+				choice=in.nextInt();
+				
+			}if (choice==13) {
 				System.err.println("See you next time!");
 				System.exit(0);
 			}
@@ -120,7 +174,12 @@ public class Geometry {
 		System.out.println("5. Circle area");
 		System.out.println("6. Circle circumference");
 		System.out.println("7. Cube volume");
-		System.out.println("8. Quit");
+		System.out.println("8. Cube surface area");
+		System.out.println("9. Rectangle volume");
+		System.out.println("10. Rectangle surface area");
+		System.out.println("11. Sphere volume");
+		System.out.println("12. Sphere surface area");
+		System.out.println("13. Quit");
 		System.out.println("Your choice:");
 
 	}
